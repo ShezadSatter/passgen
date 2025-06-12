@@ -1,0 +1,65 @@
+body  {
+    font-family: Arial, sans-serif;
+    background: #202020;
+}
+
+.container {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #646464;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+
+}
+h1 {
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.password-txt {
+    color: #ff0000;
+    font-size: 0.9em;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    /* Remove or increase max-width if needed */
+    max-width: 100%;
+    word-break: break-all; /* Break long words */
+    overflow-wrap: break-word; /* Wrap text to next line */
+}
+input[type="number"], input[type="password"] {
+    width: 100%;
+    padding: 0.5em;
+}
+input[type="submit"], button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.7em;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 0.5em;
+}
+input[type="submit"]:hover, button:hover {
+    background: #0056b3;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+.modal-content {
+    background: #fff;
+    padding: 2em;
+    margin: 10vh auto;
+    width: 350px;
+    border-radius: 8px;
+    position: relative;
+}

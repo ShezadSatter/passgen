@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <form id="gen-form">
+            <label>Password Length:
+                <input type="number" id="length" min="4" value="12">
+            </label>
+            <input type="submit" value="Generate">
+        </form>
+        <div id="result" style="display:none;">
+            <h2>
+                Your Password:
+                <div class="password-txt" id="password"></div>
+                <div>
+                <button type="button" id="copy-btn">Copy</button>
+                <button type="button" id="download-btn">Download</button>
+            </div>
+            </h2>
+            <span id="copy-msg" style="color: green; display: none;">Copied!</span>
+        </div>
+    </div>
+    <!-- Download Option Modal -->
+    <div id="downloadOptionModal" class="modal">
+        <div class="modal-content">
+            <h3>Download Options</h3>
+            <p>Do you have software like 7-Zip or WinRAR that supports AES-encrypted ZIP files?</p>
+            <button id="zip-yes">Yes, I have compatible software</button>
+            <button id="zip-no">No, just download the .txt file</button>
+            <button id="zip-cancel">Cancel</button>
+        </div>
+    </div>
+    <!-- Password Modal -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <h3>Encrypt & Download</h3>
+            <label>
+                Enter password:<br>
+                <input type="password" id="userPassword">
+            </label><br>
+            <label>
+                Re-enter password:<br>
+                <input type="password" id="userPasswordConfirm">
+            </label><br>
+            <span id="download-error" style="color:red; display:none;">Passwords do not match!</span><br>
+            <button id="download-zip-btn">Download</button>
+            <button id="password-cancel">Cancel</button>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@zip.js/zip.js@2.7.27/dist/zip-full.min.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
